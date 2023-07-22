@@ -26,8 +26,9 @@ public class Gmail extends Email {
         // If the inbox is full, move the oldest mail in the inbox to trash and add the new mail to inbox.
         Mail mail1 = new Mail(date, sender, message);
         if (inbox.size() == inboxCapacity){
-            Mail oldest = inbox.remove(0);
+            Mail oldest = inbox.get(0);
             trash.add(oldest);
+            inbox.remove(0);
         }
         // It is guaranteed that:
         // 1. Each mail in the inbox is distinct.
