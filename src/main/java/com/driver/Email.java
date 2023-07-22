@@ -39,9 +39,9 @@ public class Email {
         // 3. It contains at least one lowercase letter
         // 4. It contains at least one digit
         // 5. It contains at least one special character. Any character apart from alphabets and digits is a special character
-        if (oldPassword.equals(this.password)){
+        if (oldPassword.equals(getPassword())){
             //check for valid password
-            if (newPassword.length() <8) {
+            if (newPassword.length() < 8) {
                 return;
             }
             if(checkValid(newPassword)){

@@ -45,6 +45,7 @@ public class Gmail extends Email {
             if (message1.getMessage().equals(message)){
                 trash.add(message1);
                 inbox.remove(message1);
+                return;
             }
         }
     }
@@ -77,6 +78,7 @@ public class Gmail extends Email {
                     Message message1 = inbox.get(i);
                     if (message.getDate().equals(end)) return mails;
                     mails++;
+                    i++;
                 }
             }
         }
