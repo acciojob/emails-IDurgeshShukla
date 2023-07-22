@@ -26,7 +26,7 @@ public class Gmail extends Email {
         // If the inbox is full, move the oldest mail in the inbox to trash and add the new mail to inbox.
         Mail mail1 = new Mail(date, sender, message);
         if (inbox.size() == inboxCapacity){
-            Mail oldest = inbox.remove(inbox.size ()- 1);
+            Mail oldest = inbox.remove(0);
             trash.add(oldest);
         }
         // It is guaranteed that:
@@ -41,6 +41,7 @@ public class Gmail extends Email {
         for (Mail mail1 : inbox){
             if (mail1.getMessage().equals(message)){
                 trash.add(mail1);
+                inbox.remove(mail1);
                 return;
             }
         }
