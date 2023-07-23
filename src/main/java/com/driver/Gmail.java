@@ -75,7 +75,7 @@ public class Gmail extends Email {
                 mails++;
             } else if(mail.getDate().equals(start) || mail.getDate().equals(end)) {
                 mails++;
-            }
+            } else if(start.equals(end)) mails++;
         }
         //It is guaranteed that start date <= end date
         return mails;
