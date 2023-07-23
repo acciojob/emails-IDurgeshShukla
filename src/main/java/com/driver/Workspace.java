@@ -32,7 +32,7 @@ public class Workspace extends Gmail{
         calendar.sort(Comparator.comparing(Meeting::getStartTime));
         System.out.println(calendar.size());
         LocalTime prev = calendar.get(0).getEndTime();
-        int canattend = 1;
+        int canattend = 0;
        for (int i = 1; i < calendar.size(); i++){
            LocalTime cur = calendar.get(i).getStartTime();
            if (prev.isBefore(cur)){
