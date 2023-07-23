@@ -20,6 +20,9 @@ public class Workspace extends Gmail{
 
     public void addMeeting(Meeting meeting){
         //add the meeting to calendar
+        if (calendar.size() == getInboxCapacity() && getInboxCapacity() > 0){
+            calendar.remove(0);
+        }
         calendar.add(meeting);
     }
 
