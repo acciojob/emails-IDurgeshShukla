@@ -1,8 +1,6 @@
 package com.driver;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class Gmail extends Email {
 
@@ -67,6 +65,7 @@ public class Gmail extends Email {
 
     public int findMailsBetweenDates(Date start, Date end){
         //find number of mails in the inbox which are received between given dates
+        inbox.sort(Comparator.comparing(Mail::getDate));
         int mails = 0;
         if (inbox.size() == 0) return 0;
 
