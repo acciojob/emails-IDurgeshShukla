@@ -19,11 +19,14 @@ public class Gmail extends Email {
     public Gmail(String emailId) {
         super(emailId);
         this.inboxCapacity = Integer.MAX_VALUE;
+        inbox = new ArrayList<>();
+        trash = new ArrayList<>();
     }
 
     public void receiveMail(Date date, String sender, String message){
         // If the inbox is full, move the oldest mail in the inbox to trash and add the new mail to inbox.
         Mail mail1 = new Mail(date, sender, message);
+        System.out.println(mail1 +" ");
         if (inbox.size() == inboxCapacity){
             Mail oldest = inbox.get(0);
             trash.add(oldest);
