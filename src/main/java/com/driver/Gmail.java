@@ -18,6 +18,7 @@ public class Gmail extends Email {
 
     public Gmail(String emailId) {
         super(emailId);
+        this.inboxCapacity = Integer.MAX_VALUE;
     }
 
     public void receiveMail(Date date, String sender, String message){
